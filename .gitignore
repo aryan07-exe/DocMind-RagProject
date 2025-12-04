@@ -1,0 +1,92 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ---- Python ----
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+nvenv/
+ENV/
+env.bak/
+venv.bak/
+
+# ---- IDE / Editor ----
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---- Environment Variables ----
+.env
+*.env
+
+# ---- Logs ----
+*.log
+logs/
+
+# ---- Byte-compiled ----
+*.sqlite3
+
+# ---- Chroma Local DB (if using persistent client) ----
+chroma_db/
+chroma/
+chromadb/
+index/
+*.chroma
+
+# ---- Uploaded Files ----
+uploads/
+files/
+temp/
+
+# ---- Cache ----
+.cache/
+__pycache__/
+pip-wheel-metadata/
+*.egg-info/
+.eggs/
+
+# ---- MyPy / Pytest ----
+.mypy_cache/
+.pytest_cache/
+
+# ---- Build ----
+build/
+dist/
+
+# ---- PyInstaller ----
+*.spec
+
+# ---- OS Generated ----
+.DS_Store
+Thumbs.db
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+

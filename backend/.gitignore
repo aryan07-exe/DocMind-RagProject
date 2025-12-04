@@ -1,0 +1,66 @@
+# ---- Python ----
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+nvenv/
+ENV/
+env.bak/
+venv.bak/
+
+# ---- IDE / Editor ----
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---- Environment Variables ----
+.env
+*.env
+
+# ---- Logs ----
+*.log
+logs/
+
+# ---- Byte-compiled ----
+*.sqlite3
+
+# ---- Chroma Local DB (if using persistent client) ----
+chroma_db/
+chroma/
+chromadb/
+index/
+*.chroma
+
+# ---- Uploaded Files ----
+uploads/
+files/
+temp/
+
+# ---- Cache ----
+.cache/
+__pycache__/
+pip-wheel-metadata/
+*.egg-info/
+.eggs/
+
+# ---- MyPy / Pytest ----
+.mypy_cache/
+.pytest_cache/
+
+# ---- Build ----
+build/
+dist/
+
+# ---- PyInstaller ----
+*.spec
+
+# ---- OS Generated ----
+.DS_Store
+Thumbs.db
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
