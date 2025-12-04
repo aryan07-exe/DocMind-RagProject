@@ -45,9 +45,9 @@ export default function Sidebar({
                         </div>
                         <div className="flex flex-col">
                             <span className="text-xl font-bold gradient-text tracking-tight font-display">
-                                NeuralGate
+                                DocMind
                             </span>
-                            <span className="text-[10px] text-slate-500 font-mono tracking-widest uppercase">AI Interface v2.0</span>
+                            <span className="text-[10px] text-slate-500 font-mono tracking-widest uppercase">AI Interface v1.0</span>
                         </div>
                     </div>
 

@@ -5,7 +5,7 @@ import bgImage from "./images/bg5.jpg";
 
 export default function Signup() {
   const navigate = useNavigate();
-  const API = "http://localhost:8000";
+  const API = "https://docmind-y11u.onrender.com";
   const [loading, setLoading] = useState(false);
 
   const containerRef = useRef(null);
@@ -56,7 +56,7 @@ export default function Signup() {
       });
 
       alert("Signup Successful!");
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       console.error(error);
       // Shake animation on failure
@@ -102,7 +102,7 @@ export default function Signup() {
       >
         <div className="text-center mb-10">
           <h2 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-slate-300 mb-3 tracking-tighter font-display drop-shadow-sm">
-            Create<span className="text-cyan-400">Access</span>
+            Join<span className="text-cyan-400">DocMind</span>
           </h2>
           <div className="flex items-center justify-center gap-3 opacity-60">
             <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-cyan-500/50"></div>
@@ -137,7 +137,7 @@ export default function Signup() {
                 name="email"
                 type="email"
                 className="w-full bg-slate-950/60 border border-slate-800 text-slate-100 p-4 rounded-xl focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition-all placeholder-slate-700 font-mono text-sm"
-                placeholder="user@neural.net"
+                placeholder="user@docmind.ai"
                 required
               />
               <div className="absolute inset-0 rounded-xl bg-cyan-500/5 opacity-0 group-focus-within:opacity-100 pointer-events-none transition-opacity duration-300" />
@@ -189,7 +189,7 @@ export default function Signup() {
           <p className="text-slate-500 text-xs uppercase tracking-wide">
             Already have credentials?{" "}
             <span
-              onClick={() => navigate("/login")}
+              onClick={() => navigate("/")}
               className="text-cyan-400 hover:text-cyan-300 cursor-pointer font-bold hover:underline transition-colors ml-1"
             >
               ACCESS TERMINAL

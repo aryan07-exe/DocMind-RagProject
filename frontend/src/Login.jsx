@@ -5,7 +5,7 @@ import bgImage from "./images/bg5.jpg";
 
 export default function Login() {
   const navigate = useNavigate();
-  const API = "http://localhost:8000";
+  const API = "https://docmind-y11u.onrender.com";
   const [loading, setLoading] = useState(false);
 
   const containerRef = useRef(null);
@@ -111,11 +111,11 @@ export default function Login() {
       >
         <div className="text-center mb-10">
           <h2 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-slate-300 mb-3 tracking-tighter font-display drop-shadow-sm">
-            Neural<span className="text-cyan-400">Gate</span>
+            Doc<span className="text-cyan-400">Mind</span>
           </h2>
           <div className="flex items-center justify-center gap-3 opacity-60">
             <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-cyan-500/50"></div>
-            <p className="text-cyan-400 text-[10px] tracking-[0.2em] uppercase font-mono">Secure Access Terminal</p>
+            <p className="text-cyan-400 text-[10px] tracking-[0.2em] uppercase font-mono">Intelligent Document Analysis</p>
             <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-cyan-500/50"></div>
           </div>
         </div>
@@ -130,7 +130,7 @@ export default function Login() {
                 name="email"
                 type="email"
                 className="w-full bg-slate-950/60 border border-slate-800 text-slate-100 p-4 rounded-xl focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition-all placeholder-slate-700 font-mono text-sm"
-                placeholder="user@neural.net"
+                placeholder="user@docmind.ai"
                 required
               />
               <div className="absolute inset-0 rounded-xl bg-cyan-500/5 opacity-0 group-focus-within:opacity-100 pointer-events-none transition-opacity duration-300" />

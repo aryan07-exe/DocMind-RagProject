@@ -8,9 +8,9 @@ import ProfileModal from "./components/ProfileModal";
 
 export default function Dashboard() {
   const navigate = useNavigate();
-  const API = "http://localhost:8000";
+  const API = "https://docmind-y11u.onrender.com";
   const username = localStorage.getItem("name") || "User";
-  const userEmail = localStorage.getItem("email") || "user@neural.net";
+  const userEmail = localStorage.getItem("email") || "user@docmind.ai";
   const userId = localStorage.getItem("user_id");
   const [file, setFile] = useState(null);
   const [question, setQuestion] = useState("");
@@ -36,7 +36,7 @@ export default function Dashboard() {
   const sidebarRef = useRef(null);
   const mainRef = useRef(null);
 
-  if (!userId) navigate("/login");
+  if (!userId) navigate("/");
 
   // Initial Entrance Animation
   useEffect(() => {
@@ -337,7 +337,7 @@ export default function Dashboard() {
         onOpenProfile={() => setShowProfile(true)}
         onLogout={() => {
           localStorage.clear();
-          navigate("/login");
+          navigate("/");
         }}
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}
