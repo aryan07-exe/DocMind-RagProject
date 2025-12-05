@@ -53,37 +53,37 @@ export default function Dashboard() {
           "-=0.6"
         );
     }
-
-    // Initial Data Fetching
-    useEffect(() => {
-      fetchChats();
-      fetchDocuments();
-    }, []);
-
-    const scrollToBottom = (instant = false) => {
-      if (instant && chatContainerRef.current) {
-        chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
-      } else {
-        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-      }
-    };
-
-    // Scroll to bottom when messages change
-    useEffect(() => {
-      scrollToBottom();
-
-      // Animate new message
-      if (messages.length > 0 && chatContainerRef.current) {
-        const lastMsg = chatContainerRef.current.lastElementChild;
-        if (lastMsg) {
-          gsap.fromTo(lastMsg,
-            { opacity: 0, y: 20, scale: 0.95 },
-            { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.2)" }
-          );
-        }
-      }
-    }, [messages]);
   }, []);
+
+  // Initial Data Fetching
+  useEffect(() => {
+    fetchChats();
+    fetchDocuments();
+  }, []);
+
+  const scrollToBottom = (instant = false) => {
+    if (instant && chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    } else {
+      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  // Scroll to bottom when messages change
+  useEffect(() => {
+    scrollToBottom();
+
+    // Animate new message
+    if (messages.length > 0 && chatContainerRef.current) {
+      const lastMsg = chatContainerRef.current.lastElementChild;
+      if (lastMsg) {
+        gsap.fromTo(lastMsg,
+          { opacity: 0, y: 20, scale: 0.95 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.2)" }
+        );
+      }
+    }
+  }, [messages]);
 
   async function fetchDocuments() {
     setFetchingDocs(true);
