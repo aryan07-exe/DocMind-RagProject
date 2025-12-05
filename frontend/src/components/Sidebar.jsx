@@ -149,32 +149,7 @@ export default function Sidebar({
                     </div>
                 </div>
 
-                {/* User Profile Section (Bottom) */}
-                <div className="p-4 border-t border-white/5 bg-slate-900/50 backdrop-blur-md">
-                    <div className="flex items-center justify-between gap-3 p-2 rounded-xl hover:bg-white/5 transition-colors cursor-pointer group" onClick={onOpenProfile}>
-                        <div className="flex items-center gap-3 overflow-hidden">
-                            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-sm font-bold text-white shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
-                                {username?.charAt(0).toUpperCase()}
-                            </div>
-                            <div className="flex flex-col truncate">
-                                <span className="text-sm font-bold text-slate-200 truncate group-hover:text-cyan-400 transition-colors">{username}</span>
-                                <span className="text-[10px] text-cyan-500/80 font-mono truncate">{userEmail}</span>
-                            </div>
-                        </div>
-                        <button
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                onLogout();
-                            }}
-                            className="p-2 text-slate-400 hover:text-red-400 hover:bg-red-950/30 rounded-lg transition-all"
-                            title="Logout"
-                        >
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
+                {/* User Profile Section Removed - Moved to RightPanel */}
             </div>
         </>
     );

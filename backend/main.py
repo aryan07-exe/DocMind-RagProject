@@ -94,6 +94,9 @@ def new_chat(req: NewChatRequest):
         "created_at": chat.created_at
     }
 
+@app.get("/health")
+async def health_check():
+    return {"status": "ok", "message": "DocMind API is running"}
 
 
 # ------------------ LIST ALL CHATS ------------------

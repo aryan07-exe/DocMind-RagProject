@@ -4,7 +4,7 @@ import gsap from "gsap";
 import bgImage from "./images/bg5.jpg";
 import Sidebar from "./components/Sidebar";
 import ChatArea from "./components/ChatArea";
-import ProfileModal from "./components/ProfileModal";
+import RightPanel from "./components/RightPanel";
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -54,39 +54,36 @@ export default function Dashboard() {
         );
     }
 
-    fetchChats();
-  }, []);
-
-  // Profile Modal Data Fetching
-  useEffect(() => {
-    if (showProfile) {
+    // Initial Data Fetching
+    useEffect(() => {
+      fetchChats();
       fetchDocuments();
-    }
-  }, [showProfile]);
+    }, []);
 
-  const scrollToBottom = (instant = false) => {
-    if (instant && chatContainerRef.current) {
-      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
-    } else {
-      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  // Scroll to bottom when messages change
-  useEffect(() => {
-    scrollToBottom();
-
-    // Animate new message
-    if (messages.length > 0 && chatContainerRef.current) {
-      const lastMsg = chatContainerRef.current.lastElementChild;
-      if (lastMsg) {
-        gsap.fromTo(lastMsg,
-          { opacity: 0, y: 20, scale: 0.95 },
-          { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.2)" }
-        );
+    const scrollToBottom = (instant = false) => {
+      if (instant && chatContainerRef.current) {
+        chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+      } else {
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
       }
-    }
-  }, [messages]);
+    };
+
+    // Scroll to bottom when messages change
+    useEffect(() => {
+      scrollToBottom();
+
+      // Animate new message
+      if (messages.length > 0 && chatContainerRef.current) {
+        const lastMsg = chatContainerRef.current.lastElementChild;
+        if (lastMsg) {
+          gsap.fromTo(lastMsg,
+            { opacity: 0, y: 20, scale: 0.95 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.2)" }
+          );
+        }
+      }
+    }, [messages]);
+  }, []);
 
   async function fetchDocuments() {
     setFetchingDocs(true);
@@ -318,7 +315,7 @@ export default function Dashboard() {
         }}
       />
 
-      {/* Sidebar */}
+      {/* Left Sidebar (Navigation & History) */}
       <Sidebar
         chats={chats}
         currentChatId={currentChatId}
@@ -344,8 +341,8 @@ export default function Dashboard() {
         sidebarRef={sidebarRef}
       />
 
-      {/* Main Chat Area */}
-      <div ref={mainRef} className="flex-1 relative z-10 h-screen flex flex-col">
+      {/* Main Chat Area (Center) */}
+      <div ref={mainRef} className="flex-1 relative z-10 h-screen flex flex-col min-w-0">
         <ChatArea
           messages={messages}
           loading={loading}
@@ -361,10 +358,8 @@ export default function Dashboard() {
         />
       </div>
 
-      {/* Profile Modal */}
-      <ProfileModal
-        isOpen={showProfile}
-        onClose={() => setShowProfile(false)}
+      {/* Right Panel (Profile & Documents) */}
+      <RightPanel
         username={username}
         userEmail={userEmail}
         userId={userId}
@@ -375,6 +370,12 @@ export default function Dashboard() {
         file={file}
         setFile={setFile}
         uploading={uploading}
+        onLogout={() => {
+          localStorage.clear();
+          navigate("/");
+        }}
+        isOpen={showProfile}
+        setIsOpen={setShowProfile}
       />
     </div>
   );
